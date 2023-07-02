@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/******** Mes réglages habituels **********/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+a {
+  display: inline-flex;
+  text-decoration: none;
+  color: initial;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: "Muoto-var";
+  src: url("../../assets/fonts/MuotoTrialVAR.woff2") format("woff2");
+  font-weight: 0 1000;
+  font-display: swap;
+}
+body {
+  background-color: #15141D;
+}
+
+.main-nav {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-height: 100px;
+  margin: 0 20px;
+  max-width: 1840px;
+}
+.main-nav__line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #D3B8E5;
+  transition: all 0.5s ease-out;
+}
+.main-nav__line.inview {
+  width: 100%;
+}
+.main-nav__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.main-nav__content .content-cubicom {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main-nav__content .content-cubicom__top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.main-nav__content .content-cubicom__top .logo {
+  max-width: 28px;
+}
+.main-nav__content .content-cubicom__top .website-name {
+  color: #F1F1F1;
+  font-family: "Muoto-var";
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+.main-nav__content .content-cubicom__bottom .website-creator {
+  color: #F1F1F1;
+  font-family: "Muoto-var";
+  font-size: clamp(14px, 5vw, 14px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+.main-nav__content .content-cubicom__linkback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.main-nav__content .content-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.main-nav__content .content-menu__links {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+.main-nav__content .content-menu__links.active {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.main-nav__content .content-menu__links .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.main-nav__content .content-menu__links .link a {
+  color: #F1F1F1;
+  font-family: "Muoto-var";
+  font-size: clamp(20px, 5vw, 24px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+.main-nav__content .content-menu__toggler {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 32px;
+  transition: all 0.2s ease-out;
+  transition-delay: 0s;
+}
+.main-nav__content .content-menu__toggler:hover {
+  cursor: pointer;
+}
+.main-nav__content .content-menu__toggler:hover .toggler-line:last-child {
+  width: 28px;
+}
+.main-nav__content .content-menu__toggler.open {
+  transform: rotate(45deg);
+  transition-delay: 0.3s;
+}
+.main-nav__content .content-menu__toggler.open .toggler-line:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+.main-nav__content .content-menu__toggler.open .toggler-line:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.main-nav__content .content-menu__toggler.open:hover .toggler-line:last-child {
+  width: 40px;
+}
+.main-nav__content .content-menu__toggler .toggler-line {
+  width: 40px;
+  height: 2px;
+  background-color: #F1F1F1;
+  transition: all 0.2s ease-out;
+}
+
+header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(../../assets/images/cubicom_header_back.png);
+  background-size: cover;
+  background-position: center center;
+}
+header::after {
+  content: "";
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #15141D 29.17%, rgba(21, 20, 29, 0) 100%);
+}

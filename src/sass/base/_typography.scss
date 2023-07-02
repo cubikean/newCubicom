@@ -1,0 +1,27 @@
+$Regular : 'Muoto-var';
+
+@font-face {
+    font-family: 'Muoto-var';
+    src: url('../../assets/fonts/MuotoTrialVAR.woff2') format("woff2");
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@mixin Text ($color, $size, $weight){
+    color: $color;
+    font-family: $Regular;
+    font-size: clamp(20px, 5vw, $size);
+    line-height: 1.2;
+    font-weight: $weight;    
+}
+
+@mixin SmallText ($color, $size, $weight){
+    color: $color;
+    font-family: $Regular;
+    font-size: clamp(14px, 5vw, $size);
+    line-height: 1.2;
+    font-weight: $weight;    
+}
+
+
+
