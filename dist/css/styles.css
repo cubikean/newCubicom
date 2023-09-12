@@ -106,8 +106,7 @@ body {
   justify-content: center;
   width: 100%;
   min-height: 100px;
-  margin: 0 20px;
-  max-width: 1840px;
+  padding: 0 20px;
 }
 .main-nav__line {
   position: absolute;
@@ -241,8 +240,9 @@ body {
 header {
   position: relative;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
   min-height: 100vh;
   background-image: url(../../assets/images/cubicom_header_back.png);
   background-size: cover;
@@ -256,4 +256,44 @@ header::after {
   bottom: 0;
   left: 0;
   background: linear-gradient(0deg, #15141D 29.17%, rgba(21, 20, 29, 0) 100%);
+}
+header .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .container .container-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-inline: auto;
+  width: fit-content;
+  padding-top: 80px;
+}
+header .container .container-title .title {
+  font-size: max(9em, 14vw);
+  font-family: "Muoto-var";
+  color: #FFFFFF;
+  font-weight: 900;
+  line-height: 0.85;
+  position: relative;
+}
+header .container .container-title .title:first-child {
+  font-variation-settings: "wdth" 150;
+}
+header .container .container-title .title:nth-child(2)::after {
+  content: "";
+  width: max(2.2em, 10vw);
+  height: 80px;
+  background-color: #FFFFFF;
+  right: -43%;
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+}
+header .container .container-title .title.stroke {
+  -webkit-text-stroke-color: #FFFFFF;
+  -webkit-text-stroke-width: 3px;
+  color: transparent;
 }

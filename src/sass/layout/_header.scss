@@ -1,5 +1,6 @@
 @use "../helpers/colors" as *;
 @use "../helpers/breakpoints" as *;
+@use "../base/typography" as *;
 @use "../components/button" as *;
 @use "../components/content" as *;
 @use "../components/spacer" as *;
@@ -7,8 +8,9 @@
 header{
     position: relative;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
     min-height: 100vh;
     background-image: url(../../assets/images/cubicom_header_back.png);
     background-size: cover;
@@ -23,4 +25,51 @@ header{
         left: 0;
         background: linear-gradient(0deg, #15141D 29.17%, rgba(21, 20, 29, 0.00) 100%);
     }
+
+    & .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .container-title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-inline: auto;
+            width: fit-content;
+            padding-top: 80px;
+
+            .title{
+                font-size: max(9em, 14vw);
+                font-family: $Regular;
+                color: $white;
+                font-weight: 900;
+                line-height: 0.85;
+                position: relative;
+                
+                &:first-child{
+                    font-variation-settings: 'wdth' 150;
+                }
+                &:nth-child(2)::after{
+                    content: "";
+                    width: max(2.2em, 10vw);
+                    height: 80px;
+                    background-color: #FFFFFF;
+                    right: -43%;
+                    position: absolute;
+                    transform: translate(50%, -50%);
+                    top: 50%;
+                }
+                
+                &.stroke{
+                    -webkit-text-stroke-color: $white;
+                    -webkit-text-stroke-width: 3px;
+                    color: transparent;
+                }
+            }
+        }
+        
+    }
+     
 }
