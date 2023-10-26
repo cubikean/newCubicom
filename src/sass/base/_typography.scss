@@ -10,7 +10,7 @@ $Regular : 'Muoto-var';
 @mixin Text ($color, $size, $weight){
     color: $color;
     font-family: $Regular;
-    font-size: clamp(20px, 5vw, $size);
+    font-size: clamp(28px, 5vw, $size);
     line-height: 1.2;
     font-weight: $weight;    
 }
@@ -18,7 +18,7 @@ $Regular : 'Muoto-var';
 @mixin SmallText ($color, $size, $weight){
     color: $color;
     font-family: $Regular;
-    font-size: clamp(14px, 5vw, $size);
+    font-size: clamp(16px, 5vw, $size);
     line-height: 1.2;
     font-weight: $weight;    
 }
