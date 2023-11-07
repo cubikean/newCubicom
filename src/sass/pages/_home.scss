@@ -233,3 +233,38 @@
         
     }
 }
+
+.about{
+    width: 100%;
+
+    .title{
+        font-size: max(4em, 14vw);
+        font-family: $Regular;
+        color: $white;
+        font-weight: 200;
+        line-height: 0.85;
+        position: relative;
+    }
+
+    &-container{
+        padding: 10vh 0;
+        margin-inline: auto;
+        max-width: 1200px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 30px;
+        flex-direction: column;
+
+        .text{
+            @include Text($white, 2.5vw, 100);
+
+            a{
+                text-decoration: underline;
+                color: $purple;
+            }
+
+        }
+    }
+    
+}

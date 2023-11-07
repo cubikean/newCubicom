@@ -89,6 +89,7 @@ body{
             justify-content: flex-end;
 
             &__links{
+                pointer-events: none;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -102,6 +103,7 @@ body{
                 &.active{
                     transform: translateX(0px);
                     opacity: 1;
+                    pointer-events: visible; 
                 }
                 
 

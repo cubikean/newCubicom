@@ -1,0 +1,130 @@
+@use "../helpers/colors" as *;
+
+* {
+  cursor: none !important;
+  cursor: none;
+}
+
+:active,
+:focus,
+:focus-visible,
+:hover {
+  cursor: none;
+}
+
+.cc-cursor,
+.cc-cursor__explore {
+  left: -8px;
+  top: -8px;
+  pointer-events: none;
+  //   will-change: transform;
+
+  @media screen and (max-width: 578px) {
+    display: none;
+  }
+}
+
+.cc-cursor {
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  background-color: $purple;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  .cc-cursor__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $purple;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.cc-cursor__explore {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  background-color: $black;
+  border-radius: 999px;
+  animation: 0.4s cubic-bezier(0.37, 0.06, 0.32, 0.96) cursorScaleInvert;
+
+  &.active {
+    z-index: 99999;
+    background-color: $black;
+    opacity: 1;
+    animation: 0.4s cubic-bezier(0.37, 0.06, 0.32, 0.96) cursorScale;
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: -75px;
+
+    p {
+      opacity: 1;
+      transform: scale(1);
+      transition: 0.3s cubic-bezier(0.37, 0.06, 0.32, 0.96);
+      will-change: transform;
+    }
+  }
+
+  p {
+    color: $white;
+    opacity: 0;
+    transition: 0.3s cubic-bezier(0.37, 0.06, 0.32, 0.96);
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.4);
+    will-change: transform;
+  }
+}
+
+@keyframes cursorScale {
+  from {
+    width: 10px;
+    height: 10px;
+    left: -5px;
+    top: -5px;
+    opacity: 0;
+  }
+  to {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+  }
+}
+@keyframes cursorScaleInvert {
+  from {
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    top: -75px;
+    opacity: 1;
+  }
+  to {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+}
