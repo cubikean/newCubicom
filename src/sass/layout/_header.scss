@@ -47,6 +47,9 @@ header{
                 font-weight: 900;
                 line-height: 0.85;
                 position: relative;
+
+                pointer-events: none;
+
                 
                 &:first-child{
                     font-variation-settings: 'wdth' 150;

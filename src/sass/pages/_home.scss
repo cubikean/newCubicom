@@ -8,7 +8,6 @@
 
 
 .sub-hero{
-
     padding: 40vh 0;
     margin-inline: auto;
     max-width: 1200px;
@@ -18,20 +17,39 @@
     }
 
     .title{
-        @include Text($white, 3vw, 100)
+        @include Text($white, 3vw, 100);
     }
 }
 
 .projects{
     width: 100%;
 
-    .title{
+    h2.title{
         font-size: max(4em, 14vw);
+        margin-left: 6vw;
         font-family: $Regular;
         color: $white;
         font-weight: 200;
         line-height: 0.85;
         position: relative;
+        margin-bottom: 100px;
+        width: fit-content;
+
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            right: 0;
+            top: 50%;
+            transform: translate(150%, -50%);
+            width: 20vw;
+            height: 20px;
+            background-color: $white;
+            -webkit-transform: translate(150%, -50%);
+            -moz-transform: translate(150%, -50%);
+            -ms-transform: translate(150%, -50%);
+            -o-transform: translate(150%, -50%);
+        }
     }
 
     .grid-container{
@@ -78,13 +96,13 @@
             
 
             &[data-grid-size='vertical']{
-                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E691B4FF' stroke-width='2' stroke-dasharray='200' stroke-dashoffset='60' stroke-linecap='square'/%3e%3c/svg%3e");
+                // background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E691B4FF' stroke-width='2' stroke-dasharray='200' stroke-dashoffset='60' stroke-linecap='square'/%3e%3c/svg%3e");
                 height: calc(800px + 40px);
                 width: 400px;
             }
 
             &[data-grid-size='horizontal']{
-                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E691B4FF' stroke-width='2' stroke-dasharray='200' stroke-dashoffset='60' stroke-linecap='square'/%3e%3c/svg%3e");
+                // background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E691B4FF' stroke-width='2' stroke-dasharray='200' stroke-dashoffset='60' stroke-linecap='square'/%3e%3c/svg%3e");
                 height: 400px;
                 width: calc(800px + 40px);
             }
@@ -235,19 +253,39 @@
 }
 
 .about{
+    display: block;
+    margin-top: 100px;
     width: 100%;
 
     .title{
         font-size: max(4em, 14vw);
+        margin-left: 6vw;
         font-family: $Regular;
         color: $white;
         font-weight: 200;
         line-height: 0.85;
         position: relative;
+        width: fit-content;
+
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            right: 0;
+            top: 50%;
+            transform: translate(150%, -50%);
+            width: 20vw;
+            height: 20px;
+            background-color: $white;
+            -webkit-transform: translate(150%, -50%);
+            -moz-transform: translate(150%, -50%);
+            -ms-transform: translate(150%, -50%);
+            -o-transform: translate(150%, -50%);
+        }
     }
 
     &-container{
-        padding: 10vh 0;
+        padding: 10vh 0vw;
         margin-inline: auto;
         max-width: 1200px;
         display: flex;
@@ -255,6 +293,11 @@
         justify-content: flex-start;
         gap: 30px;
         flex-direction: column;
+
+        @media screen and (max-width:1400px) {
+            padding: 10vh 5vw;
+        }
+    
 
         .text{
             @include Text($white, 2.5vw, 100);

@@ -136,6 +136,16 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+@media screen and (max-width: 768px) {
+  .main-nav__content .content-cubicom {
+    left: 0;
+    transform: unset;
+    -webkit-transform: unset;
+    -moz-transform: unset;
+    -ms-transform: unset;
+    -o-transform: unset;
+  }
+}
 .main-nav__content .content-cubicom__top {
   position: relative;
   display: flex;
@@ -149,9 +159,14 @@ body {
 .main-nav__content .content-cubicom__top .website-name {
   color: #F1F1F1;
   font-family: "Muoto-var";
-  font-size: clamp(28px, 5vw, 28px);
+  font-size: clamp(26px, 5vw, 16px);
   line-height: 1.2;
   font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+  .main-nav__content .content-cubicom__top .website-name {
+    display: none;
+  }
 }
 .main-nav__content .content-cubicom__bottom .website-creator {
   color: #F1F1F1;
@@ -159,6 +174,11 @@ body {
   font-size: clamp(16px, 5vw, 14px);
   line-height: 1.2;
   font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+  .main-nav__content .content-cubicom__bottom .website-creator {
+    display: none;
+  }
 }
 .main-nav__content .content-cubicom__linkback {
   position: absolute;
@@ -198,7 +218,7 @@ body {
 .main-nav__content .content-menu__links .link a {
   color: #F1F1F1;
   font-family: "Muoto-var";
-  font-size: clamp(28px, 5vw, 24px);
+  font-size: clamp(16px, 5vw, 16px);
   line-height: 1.2;
   font-weight: 400;
 }
@@ -404,6 +424,7 @@ header .container .container-title .title {
   font-weight: 900;
   line-height: 0.85;
   position: relative;
+  pointer-events: none;
 }
 header .container .container-title .title:first-child {
   font-variation-settings: "wdth" 150;
@@ -435,7 +456,7 @@ header .container .container-title .title.stroke {
 .sub-hero .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(28px, 5vw, 3vw);
+  font-size: clamp(26px, 5vw, 3vw);
   line-height: 1.2;
   font-weight: 100;
 }
@@ -443,13 +464,31 @@ header .container .container-title .title.stroke {
 .projects {
   width: 100%;
 }
-.projects .title {
+.projects h2.title {
   font-size: max(4em, 14vw);
+  margin-left: 6vw;
   font-family: "Muoto-var";
   color: #FFFFFF;
   font-weight: 200;
   line-height: 0.85;
   position: relative;
+  margin-bottom: 100px;
+  width: fit-content;
+}
+.projects h2.title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  transform: translate(150%, -50%);
+  width: 20vw;
+  height: 20px;
+  background-color: #FFFFFF;
+  -webkit-transform: translate(150%, -50%);
+  -moz-transform: translate(150%, -50%);
+  -ms-transform: translate(150%, -50%);
+  -o-transform: translate(150%, -50%);
 }
 .projects .grid-container {
   display: grid;
@@ -485,12 +524,10 @@ header .container .container-title .title.stroke {
   width: 400px;
 }
 .projects .grid-container .item[data-grid-size=vertical] {
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E691B4FF' stroke-width='2' stroke-dasharray='200' stroke-dashoffset='60' stroke-linecap='square'/%3e%3c/svg%3e");
   height: 840px;
   width: 400px;
 }
 .projects .grid-container .item[data-grid-size=horizontal] {
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E691B4FF' stroke-width='2' stroke-dasharray='200' stroke-dashoffset='60' stroke-linecap='square'/%3e%3c/svg%3e");
   height: 400px;
   width: 840px;
 }
@@ -543,7 +580,7 @@ header .container .container-title .title.stroke {
 .projects .grid-container .item .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(28px, 5vw, 2vw);
+  font-size: clamp(26px, 5vw, 2vw);
   line-height: 1.2;
   font-weight: 100;
 }
@@ -619,18 +656,37 @@ header .container .container-title .title.stroke {
 }
 
 .about {
+  display: block;
+  margin-top: 100px;
   width: 100%;
 }
 .about .title {
   font-size: max(4em, 14vw);
+  margin-left: 6vw;
   font-family: "Muoto-var";
   color: #FFFFFF;
   font-weight: 200;
   line-height: 0.85;
   position: relative;
+  width: fit-content;
+}
+.about .title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  transform: translate(150%, -50%);
+  width: 20vw;
+  height: 20px;
+  background-color: #FFFFFF;
+  -webkit-transform: translate(150%, -50%);
+  -moz-transform: translate(150%, -50%);
+  -ms-transform: translate(150%, -50%);
+  -o-transform: translate(150%, -50%);
 }
 .about-container {
-  padding: 10vh 0;
+  padding: 10vh 0vw;
   margin-inline: auto;
   max-width: 1200px;
   display: flex;
@@ -639,10 +695,15 @@ header .container .container-title .title.stroke {
   gap: 30px;
   flex-direction: column;
 }
+@media screen and (max-width: 1400px) {
+  .about-container {
+    padding: 10vh 5vw;
+  }
+}
 .about-container .text {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(28px, 5vw, 2.5vw);
+  font-size: clamp(26px, 5vw, 2.5vw);
   line-height: 1.2;
   font-weight: 100;
 }

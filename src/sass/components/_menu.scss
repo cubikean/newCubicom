@@ -50,6 +50,15 @@ body{
             left: 50%;
             transform: translateX(-50%);
 
+            @media screen and (max-width:768px) {
+                left: 0;
+                transform: unset;
+                -webkit-transform: unset;
+                -moz-transform: unset;
+                -ms-transform: unset;
+                -o-transform: unset;
+}
+
             &__top{
                 position: relative;
                 display: flex;
@@ -62,14 +71,21 @@ body{
                 }
 
                 .website-name{
-                    @include Text($off-white, 28px, 400)
+                    @include Text($off-white, 16px, 400);
+                    @media screen and (max-width:768px) {
+                        display: none;
+                    }
+                    
                 }
             }
 
             &__bottom{
 
                 .website-creator{
-                    @include SmallText($off-white, 14px, 400)
+                    @include SmallText($off-white, 14px, 400);
+                    @media screen and (max-width:768px) {
+                        display: none;
+                    }
                 }
             }
             &__linkback{
@@ -114,7 +130,7 @@ body{
                     justify-content: flex-end;
 
                     & a {
-                        @include Text($off-white, 24px, 400)
+                        @include SmallText($off-white, 16px, 400)
                     }
                 }
             }
