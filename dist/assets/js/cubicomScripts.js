@@ -6,4 +6,10 @@ window.addEventListener('load', ()=>{
         document.querySelector('.content-menu__toggler').classList.toggle('open')
         document.querySelector('.content-menu__links').classList.toggle('active')
     })
+
+    function getCurrentYear() {
+        return new Date().getFullYear();
+      };
+    
+    document.getElementById("website-date").innerHTML = `${getCurrentYear()}© `;
 })

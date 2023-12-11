@@ -17,7 +17,7 @@
     }
 
     .title{
-        @include Text($white, 3vw, 100);
+        @include Text($white, 2.5vw, 100);
     }
 }
 
@@ -254,7 +254,8 @@
 
 .about{
     display: block;
-    margin-top: 100px;
+    padding: 40vh 0;
+    padding-bottom: 50px;
     width: 100%;
 
     .title{

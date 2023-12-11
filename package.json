@@ -13,20 +13,18 @@
         "copier": "npm-run-all --parallel copier:*",
         "surveiller:assets": "onchange \"src/assets/**/*\" -- npm run copier:assets",
         "surveiller:html": "onchange \"src/*.html\" -- npm run copier:html",
-        "surveiller:php": "onchange \"src/*.php\" -- npm run copier:php",
         "surveiller:php": "onchange \"src/*.ico\" -- npm run copier:ico",
         "surveiller:js": "onchange \"src/js/*.js\" -- npm run copier:js",
         "surveiller:sass": "sass --no-source-map --watch src/sass:dist/css",
         "surveiller": "npm-run-all --parallel surveiller:*",
         "servir": "browser-sync start --server dist --files dist",
         "build": "npm-run-all copier --parallel surveiller servir",
-       
         "surveillerprod:sass": "sass --no-source-map src/sass:dist/css",
         "surveillerprod": "npm-run-all --parallel surveillerprod:*",
         "buildprod": "npm-run-all copier --parallel surveillerprod"
     },
     "dependencies": {
-        "browser-sync": "^2.27.12",
+        "browser-sync": "^2.23.7",
         "copyfiles": "^2.4.1",
         "engine.io": "^6.4.1",
         "npm-run-all": "^4.1.5",

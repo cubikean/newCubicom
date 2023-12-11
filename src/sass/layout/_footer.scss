@@ -3,3 +3,42 @@
 @use "../base/typography" as *;
 @use "../components/content" as *;
 
+.main-footer{
+    position: relative;
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    border-top: 1px solid $purple;
+    
+    &__content{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .website-name{
+            @include SmallText($white, 16px, 400);
+            a{
+                @include SmallText($white, 16px, 400);
+            }
+
+            span{
+                @include SmallText($white, 16px, 100);
+            }
+        }
+
+        .content-socials{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            img{
+                max-width: 22px;
+            }
+        }
+    }
+}

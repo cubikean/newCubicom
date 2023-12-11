@@ -89,6 +89,10 @@ img {
   width: 100%;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: "Muoto-var";
   src: url("../../assets/fonts/MuotoTrialVAR.woff2") format("woff2");
@@ -443,6 +447,53 @@ header .container .container-title .title.stroke {
   color: #D3B8E5;
 }
 
+.main-footer {
+  position: relative;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid #D3B8E5;
+}
+.main-footer__content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-footer__content .website-name {
+  color: #FFFFFF;
+  font-family: "Muoto-var";
+  font-size: clamp(16px, 5vw, 16px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+.main-footer__content .website-name a {
+  color: #FFFFFF;
+  font-family: "Muoto-var";
+  font-size: clamp(16px, 5vw, 16px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+.main-footer__content .website-name span {
+  color: #FFFFFF;
+  font-family: "Muoto-var";
+  font-size: clamp(16px, 5vw, 16px);
+  line-height: 1.2;
+  font-weight: 100;
+}
+.main-footer__content .content-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.main-footer__content .content-socials img {
+  max-width: 22px;
+}
+
 .sub-hero {
   padding: 40vh 0;
   margin-inline: auto;
@@ -456,7 +507,7 @@ header .container .container-title .title.stroke {
 .sub-hero .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(26px, 5vw, 3vw);
+  font-size: clamp(26px, 5vw, 2.5vw);
   line-height: 1.2;
   font-weight: 100;
 }
@@ -657,7 +708,8 @@ header .container .container-title .title.stroke {
 
 .about {
   display: block;
-  margin-top: 100px;
+  padding: 40vh 0;
+  padding-bottom: 50px;
   width: 100%;
 }
 .about .title {
