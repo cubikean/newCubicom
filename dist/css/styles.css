@@ -163,7 +163,7 @@ body {
 .main-nav__content .content-cubicom__top .website-name {
   color: #F1F1F1;
   font-family: "Muoto-var";
-  font-size: clamp(26px, 5vw, 16px);
+  font-size: clamp(22px, 5vw, 16px);
   line-height: 1.2;
   font-weight: 400;
 }
@@ -387,6 +387,50 @@ body {
     opacity: 1;
   }
 }
+a.link, .submit-btn {
+  position: relative;
+  color: #D3B8E5;
+  font-family: "Muoto-var";
+  font-size: clamp(16px, 5vw, 20px);
+  line-height: 1.2;
+  font-weight: 300;
+  background-color: transparent;
+  border: none;
+  display: flex;
+}
+a.link::before, .submit-btn::before {
+  content: "→";
+  position: relative;
+  order: 2;
+  opacity: 0;
+  padding-left: 6px;
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -ms-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -o-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+a.link:hover::before, .submit-btn:hover::before {
+  padding-left: 14px;
+  opacity: 1;
+}
+a.link:hover::after, .submit-btn:hover::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.submit-btn {
+  color: #D3B8E5;
+  font-family: "Muoto-var";
+  font-size: clamp(16px, 5vw, 24px);
+  line-height: 1.2;
+  font-weight: 300;
+}
+
 header {
   position: relative;
   display: flex;
@@ -407,6 +451,15 @@ header::after {
   left: 0;
   background: linear-gradient(0deg, #15141D 29.17%, rgba(21, 20, 29, 0) 100%);
 }
+header.contact {
+  min-height: unset;
+  background-image: unset;
+  background-size: cover;
+  background-position: center center;
+}
+header.contact::after {
+  display: none;
+}
 header .container {
   width: 100%;
   display: flex;
@@ -422,7 +475,7 @@ header .container .container-title {
   padding-top: 80px;
 }
 header .container .container-title .title {
-  font-size: max(4em, 14vw);
+  font-size: max(3em, 14vw);
   font-family: "Muoto-var";
   color: #FFFFFF;
   font-weight: 900;
@@ -436,7 +489,7 @@ header .container .container-title .title:first-child {
 header .container .container-title .title:nth-child(2)::after {
   content: "";
   width: max(2.2em, 10vw);
-  height: max(30px, 5vw);
+  height: max(20px, 3.5vw);
   background-color: #FFFFFF;
   right: -43%;
   position: absolute;
@@ -446,6 +499,19 @@ header .container .container-title .title:nth-child(2)::after {
 header .container .container-title .title.stroke {
   color: #D3B8E5;
 }
+header .container .contact .title {
+  font-size: max(3em, 8vw);
+}
+header .container .contact .title:nth-child(2)::after {
+  content: "";
+  width: max(3.7em, 10vw);
+  height: max(20px, 3.5vw);
+  background-color: #FFFFFF;
+  left: 17%;
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+}
 
 .main-footer {
   position: relative;
@@ -454,8 +520,9 @@ header .container .container-title .title.stroke {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 0;
+  padding: 20px;
   border-top: 1px solid #D3B8E5;
+  z-index: 10;
 }
 .main-footer__content {
   width: 100%;
@@ -507,7 +574,7 @@ header .container .container-title .title.stroke {
 .sub-hero .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(26px, 5vw, 2.5vw);
+  font-size: clamp(22px, 5vw, 2.5vw);
   line-height: 1.2;
   font-weight: 100;
 }
@@ -526,6 +593,11 @@ header .container .container-title .title.stroke {
   margin-bottom: 100px;
   width: fit-content;
 }
+@media screen and (max-width: 768px) {
+  .projects h2.title {
+    margin-bottom: 40px;
+  }
+}
 .projects h2.title::after {
   content: "";
   position: absolute;
@@ -540,6 +612,11 @@ header .container .container-title .title.stroke {
   -moz-transform: translate(150%, -50%);
   -ms-transform: translate(150%, -50%);
   -o-transform: translate(150%, -50%);
+}
+@media screen and (max-width: 768px) {
+  .projects h2.title::after {
+    display: none;
+  }
 }
 .projects .grid-container {
   display: grid;
@@ -626,12 +703,13 @@ header .container .container-title .title.stroke {
 @media screen and (max-width: 768px) {
   .projects .grid-container .item[data-grid-place] {
     height: fit-content;
+    padding: 14px;
   }
 }
 .projects .grid-container .item .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(26px, 5vw, 2vw);
+  font-size: clamp(22px, 5vw, 2vw);
   line-height: 1.2;
   font-weight: 100;
 }
@@ -673,44 +751,17 @@ header .container .container-title .title.stroke {
   line-height: 1.2;
   font-weight: 300;
 }
-.projects .grid-container .item .content a.link {
-  position: relative;
-  color: #D3B8E5;
-  font-family: "Muoto-var";
-  font-size: clamp(16px, 5vw, 20px);
-  line-height: 1.2;
-  font-weight: 300;
-}
-.projects .grid-container .item .content a.link::before {
-  content: "→";
-  position: relative;
-  order: 2;
-  opacity: 0;
-  padding-left: 6px;
-  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -moz-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -ms-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -o-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-.projects .grid-container .item .content a.link:hover::before {
-  padding-left: 14px;
-  opacity: 1;
-}
-.projects .grid-container .item .content a.link:hover::after {
-  -webkit-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transform-origin: left center;
-  -ms-transform-origin: left center;
-  transform-origin: left center;
-}
 
 .about {
   display: block;
-  padding: 40vh 0;
+  padding: 20vh 0;
   padding-bottom: 50px;
   width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 12vh 0;
+  }
 }
 .about .title {
   font-size: max(4em, 14vw);
@@ -737,6 +788,11 @@ header .container .container-title .title.stroke {
   -ms-transform: translate(150%, -50%);
   -o-transform: translate(150%, -50%);
 }
+@media screen and (max-width: 768px) {
+  .about .title::after {
+    display: none;
+  }
+}
 .about-container {
   padding: 10vh 0vw;
   margin-inline: auto;
@@ -755,11 +811,90 @@ header .container .container-title .title.stroke {
 .about-container .text {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(26px, 5vw, 2.5vw);
+  font-size: clamp(22px, 5vw, 2.5vw);
   line-height: 1.2;
   font-weight: 100;
 }
 .about-container .text a {
   text-decoration: underline;
   color: #D3B8E5;
+}
+
+body.contact {
+  background-image: url(../../assets/images/cubicom_header_back.png);
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}
+body.contact::after {
+  content: "";
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #15141D 29.17%, rgba(21, 20, 29, 0) 100%);
+  pointer-events: none;
+}
+
+.sub-hero {
+  padding: 12vh 0;
+  margin-inline: auto;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1400px) {
+  .sub-hero {
+    padding: 10vh 5vw;
+  }
+}
+.sub-hero .title {
+  color: #FFFFFF;
+  font-family: "Muoto-var";
+  font-size: clamp(22px, 5vw, 2.5vw);
+  line-height: 1.2;
+  font-weight: 100;
+}
+.sub-hero form.form-field {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .sub-hero form.form-field {
+    gap: 20px;
+  }
+}
+.sub-hero form.form-field .field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.sub-hero form.form-field .field input, .sub-hero form.form-field .field textarea {
+  width: 100%;
+  padding: 22px;
+  border-radius: 12px;
+  border: 2px solid #E691B4;
+  background-color: #15141D;
+  color: #FFFFFF;
+  color: #FFFFFF;
+  font-family: "Muoto-var";
+  font-size: clamp(16px, 5vw, 24px);
+  line-height: 1.2;
+  font-weight: 300;
+}
+@media screen and (max-width: 768px) {
+  .sub-hero form.form-field .field input, .sub-hero form.form-field .field textarea {
+    padding: 12px;
+    border: 1px solid #E691B4;
+  }
+}
+.sub-hero form.form-field .field.field-text {
+  flex: 1 1 calc(50% - 20px);
+}
+@media screen and (max-width: 768px) {
+  .sub-hero form.form-field .field.field-text {
+    flex: 1 1 100%;
+  }
 }

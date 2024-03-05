@@ -2,3 +2,62 @@
 @use '../helpers/breakpoints' as *;
 @use '../base/typography' as *;
 
+a.link, .submit-btn{
+    position: relative;
+    @include SmallText($purple, 20px, 300);
+    background-color: transparent;
+    border: none;
+    display: flex;
+
+    &::before{
+        content: "→";
+        position: relative;
+        order: 2;
+        opacity: 0;
+        padding-left: 6px;
+        transition: all .25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        -webkit-transition: all .25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        -moz-transition: all .25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        -ms-transition: all .25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        -o-transition: all .25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    // &::after{
+    //     background: $purple none repeat scroll 0 0;
+    //     content: '';
+    //     position: absolute;
+    //     right: 0;
+    //     bottom: -3px;
+    //     left: 0;
+    //     height: 2px;
+    //     transform: scale(0);
+    //     -webkit-transform: scale(0);
+    //     -moz-transform: scale(0);
+    //     -ms-transform: scale(0);
+    //     -o-transform: scale(0);
+    //     transform-origin: right center;
+    //     transition: transform .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    //     -webkit-transition: transform .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    //     -moz-transition: transform .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    //     -ms-transition: transform .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    //     -o-transition: transform .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    // }
+
+    &:hover{
+        &::before{
+            padding-left: 14px;
+            opacity: 1;
+        }
+        &::after{
+            -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+            transform: scaleX(1);
+            -webkit-transform-origin: left center;
+            -ms-transform-origin: left center;
+            transform-origin: left center;
+        }
+    }
+}
+.submit-btn{
+    @include SmallText($purple, 24px, 300);
+}

@@ -10,8 +10,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px;
     border-top: 1px solid $purple;
+    z-index: 10;
     
     &__content{
         width: 100%;
