@@ -87,6 +87,7 @@
     padding: 20vh 0;
     margin-inline: auto;
     max-width: 1200px;
+    
 
     @media screen and (max-width:1400px) {
         padding: 10vh 5vw;
@@ -95,23 +96,24 @@
     @media screen and (max-width:768px) {
         padding: 5vh 5vw;
     }
-
-    .title{
-        @include Text($white, 1.5vw, 100);
-        right: 20%;
-        position: relative;
-        margin-bottom: 60px;
-        text-wrap: pretty;
-
-        @media screen and (max-width:1900px) {
-            right: 0%;
+    &.project{
+        .title{
+            @include Text($white, 1.5vw, 100);
+            right: 20%;
+            position: relative;
+            margin-bottom: 60px;
+            text-wrap: pretty;
+    
+            @media screen and (max-width:1900px) {
+                right: 0%;
+            }
+    
+            @media screen and (max-width:768px) {
+                margin-bottom: 30px;
+            }
         }
-
-        @media screen and (max-width:768px) {
-            margin-bottom: 30px;
-        }
-
     }
+    
 }
 .full-section{
     width: 100%;

@@ -1013,7 +1013,7 @@ body.contact::after {
     padding: 5vh 5vw;
   }
 }
-.sub-hero .title {
+.sub-hero.project .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
   font-size: clamp(22px, 5vw, 1.5vw);
@@ -1025,12 +1025,12 @@ body.contact::after {
   text-wrap: pretty;
 }
 @media screen and (max-width: 1900px) {
-  .sub-hero .title {
+  .sub-hero.project .title {
     right: 0%;
   }
 }
 @media screen and (max-width: 768px) {
-  .sub-hero .title {
+  .sub-hero.project .title {
     margin-bottom: 30px;
   }
 }
