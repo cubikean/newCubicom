@@ -74,6 +74,11 @@
         padding: 0 5vw;
         gap: 40px;
 
+        &:nth-child(2){
+            margin: 40px 0;
+            margin-inline: auto;
+        }
+
         @media screen and (max-width:1400px) {
             grid-template-columns: repeat(2, auto);
             grid-template-rows: repeat(4, auto);

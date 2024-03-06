@@ -34,7 +34,12 @@ header{
 
         &::after{
             display: none;
+            
         }
+    }
+
+    &.projects{
+        min-height: 60vh;
     }
 
     & .container{
@@ -98,8 +103,26 @@ header{
                     transform: translate(50%, -50%);
                     top: 50%;
                     }
+            }
+        }
+
+        .projects{
+            .title{
+                font-size: max(3em, 8vw);
+                &:nth-child(1)::after{
+                    content: "";
+                    width: max(3em, 10vw);
+                    height: max(20px, 3.5vw);
+                    background-color: #FFFFFF;
+                    left: 50%;
+                    position: absolute;
+                    transform: translate(50%, -50%);
+                    top: 50%;
                 }
-            
+                &:nth-child(2)::after{
+                    display: none;
+                }
+            }
         }
         
     }

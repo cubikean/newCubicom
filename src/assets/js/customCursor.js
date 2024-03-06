@@ -19,7 +19,7 @@ function customCursor() {
     function updateElements(){
     console.log('customCursor updateElements')
   
-      customExploreLinks = document.querySelectorAll('.custom_explore, [data-project-count]')  
+      customExploreLinks = document.querySelectorAll('.custom_explore, [data-project-count], .link-next')  
   
       if (e.secCursor.classList.contains('active')){
         e.secCursor.classList.remove('active')

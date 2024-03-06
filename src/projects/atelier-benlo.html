@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script src="../assets/js/lib/gsap.min.js" defer></script>
+    <script src="../assets/js/lib/ScrollTrigger.min.js" defer></script>
+    <script src="../assets/js/cubicomScripts.js" defer></script>
+    <script src="../assets/js/customCursor.js" async></script>
+    <title>Atelier Benlo - Cubicom</title>
+  </head>
+
+  <body class="single-project">
+    <header>
+      <!-- CUSTOM CURSOR -->
+
+      <div class="cc-cursor is-active" id="js-cc-cursor">
+        <div class="cc-cursor__inner" id="js-cc-cursor__inner"></div>
+      </div>
+      <div class="cc-cursor__explore">
+        <p>EXPLORE</p>
+      </div>
+      <!-- ## CUSTOM CURSOR -->
+
+      <nav class="main-nav">
+        <span class="main-nav__line"></span>
+
+        <div class="main-nav__content">
+          <div class="content-cubicom">
+            <div class="content-cubicom__top">
+              <div class="logo">
+                <img
+                  src="../assets/images/logo-cubicom.webp"
+                  alt="Logo Cubicom"
+                />
+              </div>
+              <p class="website-name">Cubicom</p>
+            </div>
+            <div class="content-cubicom__bottom">
+              <span class="website-creator">By Hugo Chatigny</span>
+            </div>
+            <a href="/" class="content-cubicom__linkback"></a>
+          </div>
+          <div class="content-menu">
+            <ul class="content-menu__links">
+              <li class="link"><a href="./projects.html">Projects</a></li>
+              <li class="link"><a href="./contact.html">Contact</a></li>
+            </ul>
+            <div id="MenuToggle" class="content-menu__toggler">
+              <span class="toggler-line"></span>
+              <span class="toggler-line"></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="background">
+          <img
+            src="../assets/images/benlo/atelier-benlo-back_compressed.webp"
+            alt=""
+          />
+        </div>
+        <div class="container-title">
+          <h1 class="title stroke">ATELIER</h1>
+          <h1 class="title">BENLO</h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="sub-hero">
+        <p class="title">
+          BENLO a été créé pour donner une identité propre à nos sculptures .
+          Pièce unique ou en séries limitées, nos créations sont signées
+          numérotées et entièrement fabriquées à la main par nos soins. Alliant
+          le bois à d'autres matériaux, nos sculptures se manifestent par leurs
+          formes oragniques et végétals associant design et tradition.
+        </p>
+        <p class="title">
+          Installé à la Rochelle, l’atelier est une aire modulable en fonction
+          de l’espace de travail nécessaire, pouvant évoluer au grès des
+          sculptures. Entièrement équipé et autonome, il prend en charge la
+          globalité des projets, de leur conception à la finition.
+        </p>
+      </section>
+
+      <section class="full-section">
+        <img src="../assets/images/benlo/first_compressed.webp" alt="" />
+      </section>
+
+      <section class="square-section">
+        <div class="grid-container">
+          <div
+            class="item"
+            data-grid-place="carre1"
+            data-grid-size="carre"
+          >
+            <img src="../assets/images/benlo/back-head_compressed.webp" alt="" />
+          </div>
+          <div
+            class="item"
+            data-grid-place="carre2"
+            data-grid-size="carre"
+          >
+            <img src="../assets/images/benlo/feet_compressed.webp" alt="" />
+          </div>
+          <div
+            class="item"
+            data-grid-place="vertical1"
+            data-grid-size="vertical"
+          >
+            <img src="../assets/images/benlo/head_compressed.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="centered-section">
+        <img src="../assets/images/benlo/benlo-page_compressed.webp" alt="" />
+      </section>
+
+      <section class="next-project">
+        <div class="container-title">
+            <h2 class="title stroke">ATELIER</h2>
+            <h2 class="title">BENLO</h2>
+        </div>
+        <div class="next-button">
+          <a class="link-next" href="#" aria-label="Projet suivant"></a>
+          <div class="shape-container">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle" width='300' height='300'>
+              <path d="M 295,150 5,295 5,5 z"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="main-footer__line"></div>
+      <div class="main-footer__content">
+        <p class="website-name">
+          <span id="website-date"></span><a href="/">Cubicom</a>
+        </p>
+        <div class="content-socials">
+          <a target="_blank" href="https://github.com/cubikean">
+            <img
+              src="./assets/images/icones/github-mark-white.svg"
+              alt="Github @Cubikean"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/hugo-chatigny-0897761b9/"
+          >
+            <img
+              src="./assets/images/icones/linkedin.svg"
+              alt="linkedin Hugo chatigny"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

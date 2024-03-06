@@ -108,9 +108,14 @@ body {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  width: 100%;
+  width: calc(100% - 144px);
   min-height: 100px;
   padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .main-nav {
+    width: 100%;
+  }
 }
 .main-nav__line {
   position: absolute;
@@ -280,6 +285,7 @@ body {
   left: -8px;
   top: -8px;
   pointer-events: none;
+  font-family: "Muoto-var";
 }
 @media screen and (max-width: 578px) {
   .cc-cursor,
@@ -322,13 +328,13 @@ body {
   width: 20px;
   height: 20px;
   opacity: 0;
-  background-color: #000000;
+  background-color: #D3B8E5;
   border-radius: 999px;
   animation: 0.4s cubic-bezier(0.37, 0.06, 0.32, 0.96) cursorScaleInvert;
 }
 .cc-cursor__explore.active {
   z-index: 99999;
-  background-color: #000000;
+  background-color: #D3B8E5;
   opacity: 1;
   animation: 0.4s cubic-bezier(0.37, 0.06, 0.32, 0.96) cursorScale;
   width: 150px;
@@ -460,6 +466,9 @@ header.contact {
 header.contact::after {
   display: none;
 }
+header.projects {
+  min-height: 60vh;
+}
 header .container {
   width: 100%;
   display: flex;
@@ -511,6 +520,22 @@ header .container .contact .title:nth-child(2)::after {
   position: absolute;
   transform: translate(50%, -50%);
   top: 50%;
+}
+header .container .projects .title {
+  font-size: max(3em, 8vw);
+}
+header .container .projects .title:nth-child(1)::after {
+  content: "";
+  width: max(3em, 10vw);
+  height: max(20px, 3.5vw);
+  background-color: #FFFFFF;
+  left: 50%;
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+}
+header .container .projects .title:nth-child(2)::after {
+  display: none;
 }
 
 .main-footer {
@@ -628,6 +653,10 @@ header .container .contact .title:nth-child(2)::after {
   margin-inline: auto;
   padding: 0 5vw;
   gap: 40px;
+}
+.projects .grid-container:nth-child(2) {
+  margin: 40px 0;
+  margin-inline: auto;
 }
 @media screen and (max-width: 1400px) {
   .projects .grid-container {
@@ -897,4 +926,297 @@ body.contact::after {
   .sub-hero form.form-field .field.field-text {
     flex: 1 1 100%;
   }
+}
+
+.single-project header {
+  background-image: unset;
+}
+@media screen and (max-width: 1200px) {
+  .single-project header {
+    min-height: unset;
+  }
+}
+.single-project header::after {
+  display: none;
+}
+.single-project header .container {
+  position: relative;
+  min-height: 90vh;
+}
+@media screen and (max-width: 1200px) {
+  .single-project header .container {
+    min-height: 60vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .single-project header .container {
+    min-height: 40vh;
+  }
+}
+@media screen and (max-width: 578px) {
+  .single-project header .container {
+    min-height: 30vh;
+  }
+}
+.single-project header .container .background {
+  position: absolute;
+  width: calc(100% - 144px);
+  height: 100%;
+  overflow: hidden;
+  top: -1px;
+}
+@media screen and (max-width: 1200px) {
+  .single-project header .container .background {
+    width: calc(100% - 0px);
+  }
+}
+.single-project header .container .background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.single-project header .container .background::after {
+  content: "";
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #15141D 29.17%, rgba(21, 20, 29, 0) 100%);
+}
+.single-project header .container .container-title {
+  justify-content: flex-end;
+  width: calc(100% - 220px);
+}
+@media screen and (max-width: 1200px) {
+  .single-project header .container .container-title {
+    width: calc(100% - 40px);
+  }
+}
+.single-project header .container .container-title .title:nth-child(2)::after {
+  display: none;
+}
+
+.sub-hero {
+  padding: 20vh 0;
+  margin-inline: auto;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1400px) {
+  .sub-hero {
+    padding: 10vh 5vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sub-hero {
+    padding: 5vh 5vw;
+  }
+}
+.sub-hero .title {
+  color: #FFFFFF;
+  font-family: "Muoto-var";
+  font-size: clamp(22px, 5vw, 1.5vw);
+  line-height: 1.2;
+  font-weight: 100;
+  right: 20%;
+  position: relative;
+  margin-bottom: 60px;
+  text-wrap: pretty;
+}
+@media screen and (max-width: 1900px) {
+  .sub-hero .title {
+    right: 0%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sub-hero .title {
+    margin-bottom: 30px;
+  }
+}
+
+.full-section {
+  width: 100%;
+}
+.full-section img {
+  max-height: 90vh;
+  object-fit: cover;
+}
+@media screen and (max-width: 1400px) {
+  .full-section img {
+    min-height: 60vh;
+  }
+}
+
+.square-section .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "carre1 vertical1" "carre2 vertical1";
+  justify-content: center;
+  max-width: calc(100% - 140px);
+  margin-inline: auto;
+  padding: 20vh 0;
+  gap: 40px;
+}
+.square-section .grid-container:nth-child(2) {
+  margin: 40px 0;
+  margin-inline: auto;
+}
+@media screen and (max-width: 768px) {
+  .square-section .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 5vh 0;
+    max-width: 100%;
+  }
+}
+.square-section .grid-container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.square-section .grid-container .item[data-grid-place=vertical1] {
+  grid-area: vertical1;
+}
+.square-section .grid-container .item[data-grid-place=carre1] {
+  grid-area: carre1;
+}
+.square-section .grid-container .item[data-grid-place=carre2] {
+  grid-area: carre2;
+}
+@media screen and (max-width: 900px) {
+  .square-section .grid-container .item[data-grid-place] {
+    width: fit-content;
+  }
+}
+@media screen and (max-width: 768px) {
+  .square-section .grid-container .item[data-grid-place] {
+    height: fit-content;
+    padding: 5vw;
+  }
+}
+.square-section .grid-container .item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.centered-section {
+  margin-left: 72px;
+  max-width: 1200px;
+}
+@media screen and (max-width: 1400px) {
+  .centered-section {
+    margin: auto 72px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .centered-section {
+    margin: auto 5vw;
+  }
+}
+
+.next-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20vh 0;
+  margin: auto;
+  width: calc(100% - 144px);
+}
+@media screen and (max-width: 1200px) {
+  .next-project {
+    margin: 0 5vw;
+    width: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .next-project {
+    padding: 10vh 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .next-project .container-title {
+    width: calc(100% - 40px);
+  }
+}
+.next-project .container-title .title {
+  font-size: max(3em, 14vw);
+  font-family: "Muoto-var";
+  color: #FFFFFF;
+  font-weight: 900;
+  line-height: 0.85;
+  position: relative;
+  pointer-events: none;
+}
+.next-project .container-title .title.stroke {
+  color: #D3B8E5;
+}
+.next-project .container-title .title:nth-child(2)::after {
+  display: none;
+}
+.next-project .next-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+@media screen and (max-width: 1400px) {
+  .next-project .next-button {
+    scale: 0.7;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .next-project .next-button {
+    scale: 0.5;
+  }
+}
+@media screen and (max-width: 768px) {
+  .next-project .next-button {
+    scale: 0.3;
+  }
+}
+@media screen and (max-width: 568px) {
+  .next-project .next-button {
+    scale: 0.2;
+    width: 100px;
+    height: 100px;
+  }
+}
+.next-project .next-button a.link-next {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.next-project .next-button .shape-container {
+  margin-right: 7vw;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.next-project .next-button .shape-container svg {
+  color: white;
+}
+.next-project .next-button .shape-container svg path {
+  fill: transparent;
+  stroke: #FFFFFF;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.next-project .next-button .shape-container svg path:hover {
+  fill: #FFFFFF;
+}
+.next-project .next-button a.link-next:hover + .shape-container {
+  margin-right: 5vw;
+}
+.next-project .next-button a.link-next:hover + .shape-container svg path {
+  fill: #FFFFFF;
 }
