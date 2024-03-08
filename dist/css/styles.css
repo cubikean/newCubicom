@@ -115,6 +115,7 @@ body {
 @media screen and (max-width: 768px) {
   .main-nav {
     width: 100%;
+    min-height: 70px;
   }
 }
 .main-nav__line {
@@ -321,6 +322,11 @@ body {
 }
 .cc-cursor.is-active {
   display: block;
+}
+@media screen and (max-width: 1024px) {
+  .cc-cursor.is-active {
+    display: none;
+  }
 }
 
 .cc-cursor__explore {

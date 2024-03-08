@@ -1,3 +1,5 @@
+import { customCursor } from './customCursor.js';
+
 window.addEventListener('load', ()=>{
     setTimeout(() => {
         document.querySelector('.main-nav__line').classList.add('inview')
@@ -12,4 +14,9 @@ window.addEventListener('load', ()=>{
       };
     
     document.getElementById("website-date").innerHTML = `${getCurrentYear()}© `;
+   
+   if (window.innerWidth >= 1024){
+       customCursor()
+   }
+
 })

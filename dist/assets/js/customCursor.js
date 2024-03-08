@@ -1,4 +1,4 @@
-function customCursor() {
+export function customCursor() {
     console.log('customCursor')
     let e = {};
     e.cursor = document.querySelector("#js-cc-cursor");
@@ -19,7 +19,7 @@ function customCursor() {
     function updateElements(){
     console.log('customCursor updateElements')
   
-      customExploreLinks = document.querySelectorAll('.custom_explore, [data-project-count], .link-next')  
+      let customExploreLinks = document.querySelectorAll('.custom_explore, [data-project-count], .link-next')  
   
       if (e.secCursor.classList.contains('active')){
         e.secCursor.classList.remove('active')
@@ -125,4 +125,4 @@ function customCursor() {
       updateElements: updateElements
     };
   }
-  const cursor = customCursor()
+  // const cursor = customCursor()
