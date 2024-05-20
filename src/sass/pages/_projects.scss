@@ -70,12 +70,17 @@
                 justify-content: flex-end;
                 width: calc(100% - 220px);
 
+                & .title {
+                    text-transform: uppercase;
+                }
+
                 @media screen and (max-width:1200px) {
                     width: calc(100% - 40px);   
                 }
                 
                 & .title:nth-child(2)::after{
                     display: none;
+                    
                 }
             }
         }
@@ -112,6 +117,12 @@
                 margin-bottom: 30px;
             }
         }
+        .link{
+            right: 20%;
+            @media screen and (max-width:1900px) {
+                right: 0%;
+            }
+        }
     }
     
 }
@@ -138,7 +149,7 @@
         "carre1 vertical1"
         "carre2 vertical1";
         justify-content: center;
-        max-width: calc(100% - 140px);
+        max-width: calc(80% - 140px);
         margin-inline: auto;
         padding: 20vh 0;
         gap: 40px;
@@ -221,12 +232,17 @@
         }
         
         & .title{
-            font-size: max(3em, 14vw);
+            font-size: max(3em, 10vw);
             font-family: $Regular;
             color: $white;
             font-weight: 900;
             line-height: 0.85;
             position: relative;
+
+            text-wrap: nowrap;
+
+
+            text-transform: uppercase;
 
             pointer-events: none;
 

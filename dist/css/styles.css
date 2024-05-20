@@ -490,12 +490,13 @@ header .container .container-title {
   padding-top: 80px;
 }
 header .container .container-title .title {
-  font-size: max(3em, 14vw);
+  font-size: max(3em, 12.5vw);
   font-family: "Muoto-var";
   color: #FFFFFF;
   font-weight: 900;
   line-height: 0.85;
   position: relative;
+  text-wrap: nowrap;
   pointer-events: none;
 }
 header .container .container-title .title:first-child {
@@ -682,17 +683,17 @@ header .container .projects .title:nth-child(2)::after {
   flex-direction: column;
   align-items: center;
   border: 3px solid #D3B8E5;
-  padding: 36px;
+  padding: 20px;
   height: 400px;
   width: 400px;
 }
 .projects .grid-container .item[data-grid-size=vertical] {
-  height: 840px;
+  height: 100%;
   width: 400px;
 }
 .projects .grid-container .item[data-grid-size=horizontal] {
-  height: 400px;
-  width: 840px;
+  height: 100%;
+  width: 100%;
 }
 .projects .grid-container .item[data-grid-place=vertical1] {
   grid-area: vertical1;
@@ -744,9 +745,15 @@ header .container .projects .title:nth-child(2)::after {
 .projects .grid-container .item .title {
   color: #FFFFFF;
   font-family: "Muoto-var";
-  font-size: clamp(22px, 5vw, 2vw);
+  font-size: clamp(22px, 5vw, 1.8vw);
   line-height: 1.2;
   font-weight: 100;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .projects .grid-container .item .title {
+    font-size: clamp(32px, 5vw, 1.8vw);
+  }
 }
 .projects .grid-container .item span.date {
   color: #D3B8E5;
@@ -758,7 +765,13 @@ header .container .projects .title:nth-child(2)::after {
 }
 .projects .grid-container .item img {
   height: 100%;
+  max-height: 430px;
   object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .projects .grid-container .item img {
+    max-height: 350px;
+  }
 }
 .projects .grid-container .item img.desk {
   display: none;
@@ -774,7 +787,6 @@ header .container .projects .title:nth-child(2)::after {
 .projects .grid-container .item .content {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
   height: 100%;
   gap: 20px;
@@ -995,6 +1007,9 @@ body.contact::after {
   justify-content: flex-end;
   width: calc(100% - 220px);
 }
+.single-project header .container .container-title .title {
+  text-transform: uppercase;
+}
 @media screen and (max-width: 1200px) {
   .single-project header .container .container-title {
     width: calc(100% - 40px);
@@ -1040,6 +1055,14 @@ body.contact::after {
     margin-bottom: 30px;
   }
 }
+.sub-hero.project .link {
+  right: 20%;
+}
+@media screen and (max-width: 1900px) {
+  .sub-hero.project .link {
+    right: 0%;
+  }
+}
 
 .full-section {
   width: 100%;
@@ -1060,7 +1083,7 @@ body.contact::after {
   grid-template-rows: repeat(2, auto);
   grid-template-areas: "carre1 vertical1" "carre2 vertical1";
   justify-content: center;
-  max-width: calc(100% - 140px);
+  max-width: calc(80% - 140px);
   margin-inline: auto;
   padding: 20vh 0;
   gap: 40px;
@@ -1148,12 +1171,14 @@ body.contact::after {
   }
 }
 .next-project .container-title .title {
-  font-size: max(3em, 14vw);
+  font-size: max(3em, 10vw);
   font-family: "Muoto-var";
   color: #FFFFFF;
   font-weight: 900;
   line-height: 0.85;
   position: relative;
+  text-wrap: nowrap;
+  text-transform: uppercase;
   pointer-events: none;
 }
 .next-project .container-title .title.stroke {

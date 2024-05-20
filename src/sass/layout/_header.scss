@@ -57,12 +57,13 @@ header{
             padding-top: 80px;
 
             .title{
-                font-size: max(3em, 14vw);
+                font-size: max(3em, 12.5vw);
                 font-family: $Regular;
                 color: $white;
                 font-weight: 900;
                 line-height: 0.85;
                 position: relative;
+                text-wrap: nowrap;
 
                 pointer-events: none;
 
